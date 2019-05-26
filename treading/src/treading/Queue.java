@@ -1,4 +1,5 @@
-package main;
+package treading;
+
 
 import java.util.LinkedList;
 /**

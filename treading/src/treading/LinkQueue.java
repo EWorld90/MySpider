@@ -1,4 +1,5 @@
-package main;
+package treading;
+
 
 import java.util.HashSet;
 import java.util.PriorityQueue;
@@ -6,9 +7,9 @@ import java.util.Set;
 import java.util.Queue;
 public class LinkQueue {
 	//已访问的 url 集合
-	private static Set visitedUrl = new HashSet();
+	static Set visitedUrl = new HashSet();
 	//待访问的 url 集合
-	private static Queue unVisitedUrl = new PriorityQueue();
+	 static Queue unVisitedUrl = new PriorityQueue();
 
 	//获得URL队列
 	public static Queue getUnVisitedUrl() {

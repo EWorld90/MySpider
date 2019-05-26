@@ -1,4 +1,5 @@
-package main;
+package treading;
+
 
 import java.util.HashSet;
 import java.util.Set;
@@ -19,7 +20,7 @@ public class HtmlParserTool {
 		Set<String> links = new HashSet<String>();
 		try {
 			Parser parser = new Parser(url);
-			parser.setEncoding("UTF-8");
+			parser.setEncoding("utf-8");
 			// 过滤 <frame >标签的 filter，用来提取 frame 标签里的 src 属性所表示的链接
 			NodeFilter frameFilter = new NodeFilter() {
 				public boolean accept(Node node) {

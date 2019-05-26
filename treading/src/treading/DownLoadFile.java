@@ -1,4 +1,4 @@
-package main;
+package treading;
 
 import java.io.DataOutputStream;
 import java.io.File;
@@ -39,7 +39,7 @@ public class DownLoadFile {
 	/**
 	 * 保存网页字节数组到本地文件 filePath 为要保存的文件的相对地址
 	 */
-	private void saveNormalFileToLocal(byte[] data, String filePath) {
+	private void saveToLocal(byte[] data, String filePath) {
 		try {
 			DataOutputStream out = new DataOutputStream(new FileOutputStream(
 					new File(filePath)));
@@ -61,13 +61,6 @@ public class DownLoadFile {
 		httpClient.getHttpConnectionManager().getParams().setConnectionTimeout(
 				5000);
 
-		System.out.println(url.substring(url.lastIndexOf(".") + 1));
-		if(url.substring(url.lastIndexOf(".") + 1).equals("doc") || url.substring(url.lastIndexOf(".") + 1).equals("ppt") || url.substring(url.lastIndexOf(".") + 1).equals("zip"))
-		{
-			System.out.println("Cannot download.");
-			return null;
-		}
-		
 		/* 2.生成 GetMethod 对象并设置参数 */
 		GetMethod getMethod = new GetMethod(url);
 		// 设置 get 请求超时 5s
@@ -92,14 +85,12 @@ public class DownLoadFile {
 			filePath = "temp\\"
 					+ getFileNameByUrl(url, getMethod.getResponseHeader(
 							"Content-Type").getValue());
+			saveToLocal(responseBody, filePath);
 			
-			saveNormalFileToLocal(responseBody, filePath);
-				
-			// 保存文件时，在控制台输出保存文件的信息
-			System.out.println("File saved: " + filePath);
+			Database.write(url, getFileNameByUrl(url, getMethod.getResponseHeader(
+					"Content-Type").getValue()));
 			
-			Database.write(url,  getFileNameByUrl(url, getMethod.getResponseHeader(
-							"Content-Type").getValue()));
+			System.out.println("File saved:" + filePath);
 			
 		} catch (HttpException e) {
 			// 发生致命的异常，可能是协议不对或者返回的内容有问题
@@ -114,5 +105,5 @@ public class DownLoadFile {
 		}
 		return filePath;
 	}
-	
+
 }

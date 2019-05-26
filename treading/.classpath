@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="src/commons-codec-1.11.jar"/>
 	<classpathentry kind="lib" path="src/commons-httpclient-3.0.1.jar"/>
 	<classpathentry kind="lib" path="src/commons-logging-1.2.jar"/>
 	<classpathentry kind="lib" path="src/htmlparser.jar"/>
 	<classpathentry kind="lib" path="src/mysql-connector-java-8.0.16.jar"/>
-	<classpathentry kind="lib" path="src/poi-3.0.2-beta2-20080112.jar"/>
-	<classpathentry kind="lib" path="src/poi-contrib-3.0.2-beta2-20080112.jar"/>
-	<classpathentry kind="lib" path="src/poi-scratchpad-3.0.2-beta2-20080112.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
