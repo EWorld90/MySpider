@@ -11,5 +11,6 @@
 	<classpathentry kind="lib" path="src/commons-logging-1.2.jar"/>
 	<classpathentry kind="lib" path="src/htmlparser.jar"/>
 	<classpathentry kind="lib" path="src/mysql-connector-java-8.0.16.jar"/>
+	<classpathentry kind="lib" path="src/jsoup-1.7.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
