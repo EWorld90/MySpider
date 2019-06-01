@@ -1,2 +1,2 @@
-# Test
-Just test for using git
+# MySpider
+一个可以爬取在线小说网站的小说并保存成txt的简单爬虫程序，并配有简易的GUI。
